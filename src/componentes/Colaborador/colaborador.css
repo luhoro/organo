@@ -60,3 +60,7 @@
 .colaborador .deletar:hover {
   fill: #ffffff;
 }
+
+.favoritar {
+  margin-top: 20px;
+}
