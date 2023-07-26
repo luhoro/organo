@@ -2,7 +2,8 @@
 import './rodape.css'
 
 const Rodape = () => {
-    return (<footer className="footer">
+  return (
+    <footer className="footer">
        <section>
        <ul>
             <li>
@@ -30,7 +31,8 @@ const Rodape = () => {
             Desenvolvido por Alura.
         </p>
        </section>
-    </footer>)
+    </footer>
+  )
 }
 
 export default Rodape

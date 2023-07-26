@@ -3,8 +3,16 @@ import Botao from '../Botao'
 import Campo from '../Campo'
 import ListaSuspensa from '../ListaSuspensa'
 import './formulario.css'
+import { ITime } from '../../shared/interfaces/ITime'
+import { IColaborador } from '../../shared/interfaces/IColaborador'
 
-const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
+interface FormularioProps {
+  aoCadastrar: (valor: IColaborador[]) => void
+  times: string[]
+  cadastrarTime: (time: ITime[]) => void
+}
+
+const Formulario = ({ aoCadastrar, times, cadastrarTime }: FormularioProps) => {
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
@@ -12,9 +20,9 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
   const [nomeTime, setNomeTime] = useState('')
   const [corTime, setCorTime] = useState('')
 
-  const aoSubmeter = (evento) => {
+  const aoSubmeter = (evento: any) => {
     evento.preventDefault()
-    console.log('form enviado', nome, cargo, imagem, time)
+
     aoCadastrar({
       nome,
       cargo,
@@ -53,9 +61,10 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
-        <Botao texto="Criar card" />
+        <Botao>Criar card</Botao>
       </form>
 
+      
       <form className="formulario" onSubmit={(evento) => {
         evento.preventDefault()
         cadastrarTime({ nome: nomeTime, cor: corTime})
@@ -70,13 +79,13 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
         />
         <Campo
           obrigatorio={true}
-          type='color'
+          tipo='color'
           label="Cor"
           placeholder="Digite a cor do time (ex: #000000)"
           valor={corTime}
           aoAlterado={(valor) => setCorTime(valor)}
         />
-        <Botao texto="Criar um novo time" />
+        <Botao>Criar um novo time</Botao>
       </form>
     </section>
   )
