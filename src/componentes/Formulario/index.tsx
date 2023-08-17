@@ -7,9 +7,9 @@ import { ITime } from '../../shared/interfaces/ITime'
 import { IColaborador } from '../../shared/interfaces/IColaborador'
 
 interface FormularioProps {
-  aoCadastrar: (valor: IColaborador[]) => void
+  aoCadastrar: (evento: any) => void
   times: string[]
-  cadastrarTime: (time: ITime[]) => void
+  cadastrarTime: (evento: any) => void
 }
 
 const Formulario = ({ aoCadastrar, times, cadastrarTime }: FormularioProps) => {

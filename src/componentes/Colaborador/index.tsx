@@ -5,8 +5,8 @@ import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 interface ColaboradorProps {
   colaborador: IColaborador
   corDeFundo: string
-  aoDeletar: (valor: string) => void
-  aoFavoritar: (valor: string) => void
+  aoDeletar: (valor: number) => void
+  aoFavoritar: (valor: number) => void
 }
 
 const Colaborador = ({ colaborador, corDeFundo, aoDeletar, aoFavoritar }: ColaboradorProps ) => {
